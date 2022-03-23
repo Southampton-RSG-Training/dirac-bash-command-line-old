@@ -9,11 +9,15 @@ questions:
 - What is an SSH key?
 objectives:
 - Connect to a remote HPC system.
+- Understand the importance of keeping SSH keys, and any other credentials, secure.
+- Describe the major benefit of 2-factor authentication.
 keypoints:
 - To connect to a remote HPC system using SSH and a password,
   run `ssh yourUsername@remote.computer.address`.
 - To connect to a remote HPC system using SSH and an SSH key,
   run `ssh -i ~/.ssh/key_for_remote_computer yourUsername@remote.computer.address`.
+- Protect your SSH keys by managing them carefully!
+- 2-factor authentication is a way to help ensure a user's identity by requiring two forms of identity evidence.
 ---
 
 ## Opening a Terminal
@@ -127,6 +131,11 @@ clipboard to the PuTTY terminal.
 SSH keys are an alternative method to using your password for authentication to
 obtain access to remote computing systems. They can also be used for
 authentication when transferring files or for accessing version control systems.
+
+As part of the registration process for DiRAC you should already have obtained and registered
+SSH keys for accessing DiRAC resources, but the process will be also covered
+here for completeness - as well as to emphasize safe SSH key management.
+
 In this section you will create a pair of SSH keys, a private key which you keep
 on your own computer and a public key which is placed on the remote HPC system
 that you will log in to.
@@ -170,7 +179,8 @@ The flag `-b` sets the number of bits in the key.
 The default is 2048. EdDSA uses a fixed key length,
 so this flag would have no effect.
 
-When prompted, enter a strong password that you will remember.
+When prompted, enter a strong password that you will remember - **do not be tempted
+to enter a blank password!**
 Cryptography is only as good as the weakest link, and this will be
 used to connect to a powerful and precious computing resource.
 
@@ -190,8 +200,40 @@ to provide.
 > unencrypted email, and even displaying the key (which is ASCII text) in your
 > terminal window.
 >
-> Protect this key as if it unlocks your front door. In many ways, it does.
+> For DiRAC, how security is implemented often differs from site-to-site
+> in terms of operating procedures, security policies, and mechanisms and tools 
+> used for security. The key thing is to be aware of which programs are using
+> your SSH keys as well as any other types of credential you may have. If using
+> multiple DiRAC resources it's likely you will have multiple keys, so managing
+> them in a secure way is very important.
+> 
+> Protect these keys as if they unlock your front door. In many ways, they do.
 {: .caution}
+
+> ## What is 2-factor authentication?
+> 
+> Another security mechanism used across some DiRAC sites is *2-factor authentication*.
+> 2FA, as it is also known, is a method used to help ensure a user's identity when
+> granting access to (typically) an online account or resource. With 2FA, a user needs
+> to present at least two forms of evidence of identity in order to successfully gain 
+> access to that resource.
+> 
+> Historically, passwords alone have been found to be inadequate. There have been many
+> password-related security breaches in recent years due to many factors, including
+> humans' poor memories, having too many accounts to maintain different password, and 
+> a general 'security fatigue', all of which may lead to easily guessable or hackable
+> passwords. 2FA attempts to solve this problem by having an additional "second factor"
+> such as:
+> 
+> - Something you know: the most common form, such as a bank card PIN or answers to secret questions.
+> - Something you have: such as a credit card, a smartphone with an authentication app,
+> or a small device able to produce a security token.
+> - Something you are: a more advanced category, this could include biometrics such as a
+> fingerprint, or a voice scan.
+> 
+> Requiring multiple authentication factors is therefore based on the premise that someone
+> who wishes to gain improper access is unlikely to be able to supply both required factors.
+{: .callout}
 
 > #### Further information
 >

@@ -117,7 +117,7 @@ to reap the benefits described above.
 
 ## The rest of this lesson
 
-The only way to use HPC resources is by learning to use the command
+The only way to use HPC resources like DiRAC is by learning to use the command
 line. This introduction to HPC systems has two parts:
 
 * We will learn to use the UNIX command line (by using Bash).
