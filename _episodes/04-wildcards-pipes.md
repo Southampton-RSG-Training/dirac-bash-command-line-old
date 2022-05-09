@@ -153,7 +153,9 @@ $ wc -l *
 > > {: .language-bash}
 > > 
 > > i.e. *anything or nothing* then `fb` then *anything or nothing*
-> {: .solution}
+> 
+{: .solution}
+
 {: .challenge}
 
 > ## Using other commands
@@ -168,7 +170,9 @@ $ wc -l *
 > > mv *.fastq fastq/
 > > ```
 > > {: .language-bash}
-> {: .solution}
+> 
+{: .solution}
+
 {: .challenge}
 
 ## Redirecting output
@@ -359,7 +363,9 @@ the number of lines from that file.
 > > 
 > > Output of `ls` is one line per item, when chaining commands together like
 > > this, so counting lines gives the number of files.
-> {: .solution}
+> 
+{: .solution}
+
 {: .challenge}
 
 > ## Reading from compressed files
@@ -384,5 +390,7 @@ the number of lines from that file.
 > > {: .language-bash}
 > > 
 > > The `head` command without any options shows the first 10 lines of a file.
-> {: .solution}
+> 
+{: .solution}
+
 {: .challenge}

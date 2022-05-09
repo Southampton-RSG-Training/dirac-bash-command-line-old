@@ -98,12 +98,16 @@ alphabetical order, arranged neatly into columns.
 > > Applications Documents    Library      Music        Public
 > > Desktop      Downloads    Movies       Pictures
 > > ```
-> > {: .output}
+> > 
+> {: .output}
+> 
 > >
 > > In addition you should also note that the preamble before the prompt (`$`)
 > > is different. This is very important for making sure you know what system
 > > you are issuing commands on when in the shell.
-> {: .solution}
+> 
+{: .solution}
+
 {: .challenge}
 
 If nothing shows up when you run `ls`, it means that nothing's there. Let's
@@ -388,7 +392,9 @@ Mandatory arguments to long options are mandatory for short options too.
 > ls: invalid option -- 'j'
 > Try 'ls --help' for more information.
 > ~~~
-> {: .error}
+> 
+{: .error}
+
 {: .callout}
 
 > ## Looking at documentation
@@ -425,7 +431,9 @@ Mandatory arguments to long options are mandatory for short options too.
 > > 7. Yes: unnecessarily complicated, but correct.
 > > 8. Yes: shortcut to go back to the user's home directory.
 > > 9. Yes: goes up one level.
-> {: .solution}
+> 
+{: .solution}
+
 {: .challenge}
 
 > ## Relative Path Resolution
@@ -446,7 +454,9 @@ Mandatory arguments to long options are mandatory for short options too.
 > >    but with `..` we asked for one level further up.
 > > 3. No: see previous explanation.
 > > 4. Yes: `../backup/` refers to `/Users/backup/`.
-> {: .solution}
+> 
+{: .solution}
+
 {: .challenge}
 
 > ## `ls` Reading Comprehension
@@ -458,7 +468,9 @@ Mandatory arguments to long options are mandatory for short options too.
 > ~~~
 > pnas_sub/ pnas_final/ original/
 > ~~~
-> {: .output}
+> 
+{: .output}
+
 >
 > 1.  `ls pwd`
 > 2.  `ls -r -F`
@@ -471,7 +483,9 @@ Mandatory arguments to long options are mandatory for short options too.
 > >     in the current directory.
 > >  3. Yes: uses the absolute path explicitly.
 > >  4. Correct: see explanations above.
-> {: .solution}
+> 
+{: .solution}
+
 {: .challenge}
 
 > ## Exploring More `ls` Arguments
@@ -489,7 +503,9 @@ Mandatory arguments to long options are mandatory for short options too.
 > > file size and the time of its last modification. The `-h` argument makes
 > > the file size "**h**uman readable", i.e. display something like `5.3K`
 > > instead of `5369`.
-> {: .solution}
+> 
+{: .solution}
+
 {: .challenge}
 
 > ## Listing Recursively and By Time
@@ -505,6 +521,8 @@ Mandatory arguments to long options are mandatory for short options too.
 > >
 > > The directories are listed alphabetical at each level, the
 > > files/directories in each directory are sorted by time of last change.
-> {: .solution}
+> 
+{: .solution}
+
 {: .challenge}
 
