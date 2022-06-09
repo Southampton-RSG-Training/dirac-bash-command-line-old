@@ -394,3 +394,5 @@ the number of lines from that file.
 {: .solution}
 
 {: .challenge}
+
+{% include links.md %}

@@ -522,3 +522,5 @@ gene_association.fb.gz
 {: .solution}
 
 {: .challenge}
+
+{% include links.md %}

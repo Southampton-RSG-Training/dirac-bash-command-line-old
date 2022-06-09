@@ -97,3 +97,5 @@ Note that this pattern is quite a common one with the Bash shell: we're running 
 {: .solution}
 
 {: .challenge}
+
+{% include links.md %}
