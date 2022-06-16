@@ -43,7 +43,7 @@ files in a directory for instance. `*` by itself means all files. Let's use our
 example data to see what I mean.
 
 ```
-$ tar xvf bash-lesson.tar.gz
+$ tar -xvzf bash-lesson.tar.gz
 $ ls
 ```
 {: .language-bash}
@@ -386,5 +386,3 @@ the number of lines from that file.
 > > The `head` command without any options shows the first 10 lines of a file.
 > {: .solution}
 {: .challenge}
-
-{% include links.md %}

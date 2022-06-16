@@ -24,10 +24,10 @@ happened yet, and we're not going to be able to do anything until we learn a
 few basic commands. By the end of this lesson, you will know how to "move
 around" the system and look at what's there.
 
-Right now, all we see is something that looks like this:
+Right now, all we see is something that looks something like this:
 
 ~~~
-{{ site.workshop_host_prompt }}
+[yourUsername@login7a [cosma7] ~]$
 ~~~
 {: .language-bash}
 
@@ -61,8 +61,7 @@ Next, let's find out where we are by running a command called `pwd` (which
 stands for "print working directory"). ("Directory" is another word for
 "folder"). At any moment, our **current working directory** (where we are) is
 the directory that the computer assumes we want to run commands in unless we
-explicitly specify something else. Here, the computer's response is `{{
-site.workshop_host_homedir }}/yourUsername`, which is ``yourUsername`` **home
+explicitly specify something else. Here, the computer's response will look something like `/cosma/home/ds007/yourUsername`, which is ``yourUsername``'s **home
 directory**. Note that the location of your home directory may differ from
 system to system.
 
@@ -71,7 +70,7 @@ $ pwd
 ~~~
 {: .language-bash}
 ~~~
-{{ site.workshop_host_homedir }}/yourUsername
+/cosma/home/ds007/yourUsername
 ~~~
 {: .output}
 
@@ -87,8 +86,11 @@ alphabetical order, arranged neatly into columns.
 
 > ## Differences between remote and local system
 >
-> Open a second terminal window on your local computer and run the `ls` command
-> without logging in remotely. What differences do you see?
+> It's important to be able to distinguish whether you're on your local machine or a remote
+> machine, and if you're connecting from either a Linux or Mac terminal it can be easy to forget!
+> 
+> If you're on either of these machines, open a second terminal window on your local computer
+> and run the `ls` command without logging in remotely. What differences do you see?
 >
 > > ## Solution
 > >
@@ -100,7 +102,7 @@ alphabetical order, arranged neatly into columns.
 > > ```
 > > {: .output}
 > >
-> > In addition you should also note that the preamble before the prompt (`$`)
+> > In addition, you should also note that the preamble before the prompt (`$`)
 > > is different. This is very important for making sure you know what system
 > > you are issuing commands on when in the shell.
 > {: .solution}
@@ -131,12 +133,9 @@ $ pwd
 ```
 {: .language-bash}
 ```
-~/documents
+/cosma/home/ds007/yourUsername/documents
 ```
 {: .output}
-
-What is the `~` character? When using the shell, `~` is a shortcut that
-represents `{{ site.workshop_host_homedir }}/yourUserName`.
 
 Now that we know how to use `cd`, we can go anywhere. That's a lot of
 responsibility. What happens if we get "lost" and want to get back to where we
@@ -145,13 +144,16 @@ started?
 To go back to your home directory, the following three commands will work:
 
 ```
-$ cd {{ site.workshop_host_homedir }}/yourUserName
+$ cd /cosma/home/ds007/yourUserName
 $ cd ~
 $ cd
 ```
 {: .language-bash}
 
-A quick note on the structure of a UNIX (Linux/Mac/Android/Solaris/etc)
+What is the ~ character? When using the shell, ~ is a shortcut that always represents
+your home directory.
+
+A quick note on the structure of a UNIX-style (Linux/Mac/Android/Solaris/etc)
 filesystem. Directories and absolute paths (i.e. exact position in the system)
 are always prefixed with a `/`. `/` by itself is the "root" or base directory.
 
@@ -225,8 +227,8 @@ $ pwd
 {: .language-bash}
 
 ```
-{{ site.workshop_host_homedir }}/yourUserName/documents
-{{ site.workshop_host_homedir }}/yourUserName
+/cosma/home/ds007/yourUserName/documents
+/cosma/home/ds007/yourUserName
 ```
 {: .output}
 
@@ -260,7 +262,7 @@ $ ls -l
 ```
 {: .language-bash}
 ```
-drwxr-xr-x 2 yourUsername tc001 4096 Jan 14 17:31 documents
+drwxr-xr-x 2 yourUsername ds007 4096 Jan 14 17:31 documents
 ```
 {: .output}
 
@@ -276,17 +278,23 @@ $ ls -l -a
 {: .language-bash}
 
 ```
-{{ site.workshop_host_prompt }} ls -la
-total 36
-drwx--S--- 5 yourUsername tc001 4096 Nov 28 09:58 .
-drwxr-x--- 3 root         tc001 4096 Nov 28 09:40 ..
--rw-r--r-- 1 yourUsername tc001   18 Dec  6  2016 .bash_logout
--rw-r--r-- 1 yourUsername tc001  193 Dec  6  2016 .bash_profile
--rw-r--r-- 1 yourUsername tc001  231 Dec  6  2016 .bashrc
-drwxr-sr-x 2 yourUsername tc001 4096 Nov 28 09:58 documents
--rw-r--r-- 1 yourUsername tc001  334 Mar  3  2017 .emacs
-drwxr-xr-x 4 yourUsername tc001 4096 Aug  2  2016 .mozilla
-drwx--S--- 2 yourUsername tc001 4096 Nov 28 09:58 .ssh
+[yourUsername@login7a [cosma7] ~]$ ls -la
+total 32
+drwxr-x---  7 yourUsername ds007 270 Jun 16 14:02 .
+drwxr-xr-x 15 root         ds007 270 Jun 15 14:50 ..
+-rw-------  1 yourUsername ds007  47 Jun 15 11:32 .bash_history
+-rw-r--r--  1 yourUsername ds007  18 Jun 13 15:06 .bash_logout
+-rw-r--r--  1 yourUsername ds007 868 Jun 13 15:06 .bash_profile
+-rw-r--r--  1 yourUsername ds007 191 Jun 13 15:06 .bashrc
+drwxr-xr-x  2 yourUsername ds007  10 Jun 16 14:02 documents
+-rw-r--r--  1 yourUsername ds007 334 Jun 13 15:06 .emacs
+-rw-r--r--  1 yourUsername ds007 172 Jun 13 15:06 .kshrc
+drwxr-xr-x  3 yourUsername ds007  27 Jun 13 15:08 .local
+-rw-r--r--  1 yourUsername ds007 124 Jun 13 15:06 .mkshrc
+drwxr-xr-x  4 yourUsername ds007  51 Apr 22  2018 .mozilla
+drwx------  2 yourUsername ds007  33 Jun 13 15:06 .ssh
+drwxr-xr-x  2 yourUsername ds007  29 May  3  2018 .xemacs
+-rw-r--r--  1 yourUsername ds007 658 Jun 13 15:06 .zshrc
 ```
 {: .output}
 
@@ -309,8 +317,8 @@ $ ls -l -a ~/documents
 {: .language-bash}
 
 ```
-drwxr-sr-x 2 yourUsername tc001 4096 Nov 28 09:58 .
-drwx--S--- 5 yourUsername tc001 4096 Nov 28 09:58 ..
+drwxr-xr-x 2 yourUsername ds007  10 Jun 16 14:02 .
+drwxr-x--- 7 yourUsername ds007 270 Jun 16 14:02 ..
 ```
 {: .output}
 
@@ -380,7 +388,7 @@ Mandatory arguments to long options are mandatory for short options too.
 > will print an error message similar to this:
 >
 > ~~~
-> [remote]$ ls -j
+> [yourUsername@login7a [cosma7] ~]$ ls -j
 > ~~~
 > {: .language-bash}
 > 
@@ -438,7 +446,7 @@ Mandatory arguments to long options are mandatory for short options too.
 > 3.  `2012-12-01/ 2013-01-08/ 2013-01-27/`
 > 4.  `original/ pnas_final/ pnas_sub/`
 >
-> ![File System for Challenge Questions](../fig/filesystem-challenge.svg)
+> ![File System for Challenge Questions]({{ site.url }}{{ site.baseurl }}/fig/filesystem-challenge.svg)
 >
 > > ## Solution
 > > 1. No: there *is* a directory `backup` in `/Users`.
@@ -508,4 +516,3 @@ Mandatory arguments to long options are mandatory for short options too.
 > {: .solution}
 {: .challenge}
 
-{% include links.md %}
