@@ -58,7 +58,7 @@ These are all text-based editors, in that they do not use a graphical user inter
 
 One of the common pitfalls of using Linux is that the `vi` editor is commonly set as the default editor. If you find yourself in `vi`, you can exit using <kbd>Escape</kbd> to get into command mode, and then <kbd>:</kbd> to enter a new command followed by <kbd>q</kbd> + <kbd>!</kbd>, which means quit `vi` without saving the file.
 
-For this lesson, we are going to us `nano`, since it's more intuitive than many other terminal text editors.
+For this lesson, we are going to use `nano`, since it's more intuitive than many other terminal text editors.
 
 To create or edit a file, type `nano <filename>`, on the terminal, where
 `<filename>` is the name of the file. If the file does not already exist, it
@@ -76,8 +76,8 @@ Nano defines a number of *shortcut keys* (prefixed by the <kbd>Control</kbd> or
 <kbd>Ctrl</kbd> key) to perform actions such as saving the file or exiting the
 editor. Here are the shortcut keys for a few common actions:
 
-* <kbd>Ctrl</kbd>+<kbd>O</kbd> &mdash; save the file (into a current name or a
-  new name).
+* <kbd>Ctrl</kbd>+<kbd>O</kbd> &mdash; save the file (using a current filename or a
+  new filename).
 
 * <kbd>Ctrl</kbd>+<kbd>X</kbd> &mdash; exit the editor. If you have not saved
   your file upon exiting, `nano` will ask you if you want to save.
@@ -176,7 +176,7 @@ $ ls
 ```
 {: .language-bash}
 ```
-draft.txt  files
+chap1.txt  chap2.txt  draft.txt  files
 ```
 {: .output}
 
@@ -245,8 +245,8 @@ $ ls
 {: .language-bash}
 
 ```
-newname.testfile copy.testfile
-files documents newname.testfile
+copy.testfile  newname.testfile
+chap1.txt  chap2.txt  files  newname.testfile
 ```
 {: .output}
 
@@ -269,8 +269,8 @@ $ ls
 {: .language-bash}
 
 ```
-files Documents newname.testfile
-files Documents
+chap1.txt  chap2.txt  files  newname.testfile
+chap1.txt  chap2.txt  files
 ```
 {: .output}
 
@@ -279,27 +279,25 @@ That was simple enough. Directories are deleted in a similar manner using `rm
 
 ```
 $ ls
-$ rm -r Documents
 $ rm -r files
 $ ls
 ```
 {: .language-bash}
 
+> ## Beware the Destructive Power of `rm`!
+>
+> Depending on the system, using `rm -r` will not prompt you if you're sure you want to
+> proceed with the deletion or not, and `rm -rf` will just do it. This is probably the
+> scariest command on UNIX - it will delete a directory and all of its contents without prompting. **ALWAYS** double check your typing before using it... if you leave out the arguments, it will attempt 
+> to delete everything on your file system that you have permission to delete. So when deleting 
+> directories be very, very careful.
+{: .caution}
+
 ```
-files Documents
-rmdir: failed to remove `files/': Directory not empty
-files
+chap1.txt  chap2.txt  files
+chap1.txt  chap2.txt
 ```
 {: .output}
-
-What happened? As it turns out, `rmdir` is unable to remove directories that
-have stuff in them. To delete a directory and everything inside it, we will use
-a special variant of `rm`, `rm -rf directory`. This is probably the scariest
-command on UNIX- it will force delete a directory and all of its contents
-without prompting. **ALWAYS** double check your typing before using it... if
-you leave out the arguments, it will attempt to delete everything on your file
-system that you have permission to delete. So when deleting directories be
-very, very careful.
 
 > ## What happens when you use `rm -rf` accidentally
 >
@@ -324,7 +322,7 @@ very, very careful.
 Sometimes it's not practical to read an entire file with `cat`- the file might
 be way too large, take a long time to open, or maybe we want to only look at a
 certain part of the file. As an example, we are going to look at a large and
-complex file type used in bioinformatics- a .gtf file. The GTF2 format is
+complex file type used in bioinformatics - a `.gtf` file. The GTF2 format is
 commonly used to describe the location of genetic features in a genome.
 
 Let's grab and unpack a set of demo files for use later. To do this, we'll use
@@ -489,19 +487,19 @@ Note that everything after the `:` is relative to our home directory on the
 remote computer. We can leave it at that if we don't care where the file goes, e.g.
 
 ```
-$ scp local-file.txt yourUsername@dirac-resource.ac.uk:
+$ scp local-file.txt yourUsername@login7.cosma.dur.ac.uk:
 ```
 {: .language-bash}
 
 > ## Upload a File
 >
-> Copy the `bash-lesson.tar.gz` file you downloaded from the Internet to your home directory on
-> dirac-resource.
+> Download the `bash-lesson.tar.gz` file to your local machine, and then copy it to the DiRAC system.
+> If you're on Windows, feel free to use your SSH client tool to do this, or if you're on Linux or Mac (or have a variant of Bash on your Windows machine), use `scp` instead.
 >
 > > ## Solution
 > >
 > > ```
-> > $ scp bash-lesson.tar.gz yourUsername@dirac-resource.ac.uk:~/
+> > $ scp bash-lesson.tar.gz yourUsername@login7.cosma.dur.ac.uk:
 > > ```
 > > {: .language-bash}
 > 
@@ -515,7 +513,7 @@ reaches the bottom of the directory tree rooted at the folder name you
 provided. For example:
 
 ```
-$ scp -r some-local-folder yourUsername@dirac-resource.ac.uk:
+$ scp -r some-local-folder yourUsername@login7.cosma.dur.ac.uk:
 ```
 {: .language-bash}
 
@@ -554,7 +552,7 @@ computer. Note that you can concatenate the two flags, instead of writing
 `-t -f` separately.
 
 ```
-$ ssh yourUsername@dirac-resource.ac.uk
+$ ssh yourUsername@login7.cosma.dur.ac.uk
 $ tar -tf bash-lesson.tar.gz
 dmel-all-r6.19.gtf
 dmel_unique_protein_isoforms_fb_2016_01.tsv
@@ -583,7 +581,7 @@ Let's see about that compression, using `du` for "**d**isk
 **u**sage".
 
 ```
-{{ site.remote.prompt }} du -sh hpc-lesson-data.tar.gz
+[yourUsername@login7a [cosma7] ~]$ du -sh bash-lesson.tar.gz
 12M     bash-lesson.tar.gz
 ```
 {: .language-bash}
@@ -672,6 +670,3 @@ that contains the `bash-lesson` directory first, then:
 $ tar -cvzf compressed_data.tar.gz bash-lesson
 ```
 {: .language-bash}
-
-
-{% include links.md %}

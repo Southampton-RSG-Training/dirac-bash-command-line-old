@@ -67,9 +67,8 @@ Strangely enough, Bash can't find our script. As it turns out, Bash will only
 look in certain directories for scripts to run. To run anything else, we need
 to tell Bash exactly where to look. To run a script that we wrote ourselves, we
 need to specify the full path to the file, followed by the filename. We could
-do this one of two ways: either with our absolute path `{{
-site.workshop_host_homedir }}/yourUserName/demo.sh`, or with the relative path
-`./demo.sh`.
+do this one of two ways: either with our absolute path `/cosma/home/ds007/yourUserName/demo.sh`,
+or with the relative path `./demo.sh`.
 
 ```
 $ ./demo.sh
@@ -82,7 +81,8 @@ bash: ./demo.sh: Permission denied
 {: .error}
 
 There's one last thing we need to do. Before a file can be run, it needs
-"permission" to run. Let's look at our file's permissions with `ls -l`:
+"permission" to run. Let's look at our file's permissions with `ls -l`
+(your directory contents will likely differ):
 
 ```
 $ ls -l
@@ -90,14 +90,14 @@ $ ls -l
 {: .language-bash}
 
 ```
--rw-rw-r-- 1 yourUsername tc001 12534006 Jan 16 18:50 bash-lesson.tar.gz
--rw-rw-r-- 1 yourUsername tc001       40 Jan 16 19:41 demo.sh
--rw-rw-r-- 1 yourUsername tc001 77426528 Jan 16 18:50 dmel-all-r6.19.gtf
--rw-r--r-- 1 yourUsername tc001   721242 Jan 25  2016 dmel_unique_protein_is...
-drwxrwxr-x 2 yourUsername tc001     4096 Jan 16 19:16 fastq
--rw-r--r-- 1 yourUsername tc001  1830516 Jan 25  2016 gene_association.fb.gz
--rw-rw-r-- 1 yourUsername tc001       15 Jan 16 19:17 test.txt
--rw-rw-r-- 1 yourUsername tc001      245 Jan 16 19:24 word_counts.txt
+-rw-rw-r-- 1 yourUsername ds007 12534006 Jan 16 18:50 bash-lesson.tar.gz
+-rw-rw-r-- 1 yourUsername ds007       40 Jan 16 19:41 demo.sh
+-rw-rw-r-- 1 yourUsername ds007 77426528 Jan 16 18:50 dmel-all-r6.19.gtf
+-rw-r--r-- 1 yourUsername ds007   721242 Jan 25  2016 dmel_unique_protein_is...
+drwxrwxr-x 2 yourUsername ds007     4096 Jan 16 19:16 fastq
+-rw-r--r-- 1 yourUsername ds007  1830516 Jan 25  2016 gene_association.fb.gz
+-rw-rw-r-- 1 yourUsername ds007       15 Jan 16 19:17 test.txt
+-rw-rw-r-- 1 yourUsername ds007      245 Jan 16 19:24 word_counts.txt
 ```
 {: .output}
 
@@ -114,7 +114,8 @@ working left to right.
    - The first set of `rwx` are the permissions that the owner has (in this
      case the owner is `yourUsername`).
    - The second set of `rwx`s are permissions that other members of the owner's
-     group share (in this case, the group is named `tc001`).
+     group share (in this case, the group is named `ds007`). On COSMA, this refers
+     to the project code your account is associated with.
    - The third set of `rwx`s are permissions that anyone else with access to
      this computer can do with a file. Though files are typically created with
      read permissions for everyone, typically the permissions on your home
@@ -305,7 +306,7 @@ $ echo $TEST
 ```
 {: .language-bash}
 ```
-total 90372 -rw-rw-r-- 1 jeff jeff 12534006 Jan 16 18:50 bash-lesson.tar.gz -rwxrwxr-x. 1 jeff jeff 40 Jan 1619:41 demo.sh -rw-rw-r-- 1 jeff jeff 77426528 Jan 16 18:50 dmel-all-r6.19.gtf -rw-r--r-- 1 jeff jeff 721242 Jan 25 2016 dmel_unique_protein_isoforms_fb_2016_01.tsv drwxrwxr-x. 2 jeff jeff 4096 Jan 16 19:16 fastq -rw-r--r-- 1 jeff jeff 1830516 Jan 25 2016 gene_association.fb.gz -rw-rw-r-- 1 jeff jeff 15 Jan 16 19:17 test.txt -rw-rw-r-- 1 jeff jeff 245 Jan 16 19:24 word_counts.txt
+total 113056 -rw-r--r-- 1 yourUsername ds007 12534006 Jun 16 14:42 bash-lesson.tar.gz -rwxr-xr-x 1 yourUsername ds007 47 Jun 16 15:02 demo.sh -rw-r--r-- 1 yourUsername ds007 77426528 Jan 16 2018 dmel-all-r6.19.gtf -rw-r--r-- 1 yourUsername ds007 721242 Jan 25 2016 dmel_unique_protein_isoforms_fb_2016_01.tsv drwxr-xr-x 2 yourUsername ds007 10 Jun 16 14:02 documents drwxr-xr-x 2 yourUsername ds007 4096 Jun 16 14:55 fastq -rw-r--r-- 1 yourUsername ds007 25056938 Jan 25 2016 gene_association.fb drwxr-xr-x 3 yourUsername ds007 4096 Jun 16 14:44 hpc-test -rw-r--r-- 1 yourUsername ds007 15 Jun 16 14:55 test.txt -rw-r--r-- 1 yourUsername ds007 343 Jun 16 14:56 word_counts.txt
 ```
 {: .output}
 
@@ -374,10 +375,12 @@ $ ./loop.sh
 ```
 bash-lesson.tar.gz
 demo.sh
-dmel_unique_protein_isoforms_fb_2016_01.tsv
 dmel-all-r6.19.gtf
+dmel_unique_protein_isoforms_fb_2016_01.tsv
+documents
 fastq
-gene_association.fb.gz
+gene_association.fb
+hpc-test
 loop.sh
 test.txt
 word_counts.txt
@@ -522,5 +525,3 @@ gene_association.fb.gz
 {: .solution}
 
 {: .challenge}
-
-{% include links.md %}

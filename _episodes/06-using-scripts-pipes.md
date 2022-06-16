@@ -29,23 +29,35 @@ So what about our own scripts? The good news is that we can use scripts we write
 
 This simple idea is why systems like Unix - and its successors like Linux - have been so successful. Instead of creating enormous programs that try to do many different things, Unix programmers focus on creating lots of simple tools that each do one job well, and that work well with each other.
 
-So taking our `my_functions.sh` script, we can use it in a pipe as we would any other command:
+So let's go back to a previous script we've used. Replace `loop.sh` with the following:
 
 ~~~
-$ ./my_functions.sh | head -10
+#!/bin/bash
+
+FILES=$(ls)
+for VAR in $FILES
+do
+        echo $VAR
+done
+~~~
+{: .language-bash}
+
+And then run it within a pipe like any other command:
+
+~~~
+$ ./loop.sh | head -4
 ~~~
 {: .language-bash}
 
 ~~~
-09:48:45
-09:48:48
-09:48:51
-09:48:54
-09:48:57
+bash-lesson.tar.gz
+demo.sh
+dmel-all-r6.19.gtf
+dmel_unique_protein_isoforms_fb_2016_01.tsv
 ~~~
 {: .output}
 
-After printing out five lines of output, the pipe terminates.
+After printing out four lines of output, the pipe terminates.
 
 ## Accepting Input into Our Script
 
@@ -56,28 +68,27 @@ Oue previous example shows how we can include the output from our commands withi
 
 while read line
 do
-   echo $line | grep "0$"
+   echo $line | grep "$1"
 done
 ~~~
 {: .language-bash}
 
-What this script will do is continually read input using `read` until there is none left, at which point the script ends. For each line of input, we use `echo` and `grep` within a pipe to only filter out and only print any output that has `0` as the last character. The `$` in the `grep` search string means match on end of line, hence `0$` means match any string that ends with `0`.
+What this script will do is continually read input using `read` until there is none left, at which point the script ends. For each line of input, we use `echo` and `grep` within a pipe to only filter out and only print any output that contains a particular word, specified as an argument to the script.
 
 Then set its execute permissions, and execute it within a pipe like so:
 
 ~~~
-$ chmod x+ filter.sh
-$ ./my_functions.sh | ./filter.sh | head -n 2
+$ chmod +x filter.sh
+$ ./loop.sh | ./filter.sh dmel | head -n 1
 ~~~
 {: .language-bash}
 
 ~~~
-10:49:30
-10:50:00
+dmel-all-r6.19.gtf
 ~~~
 {: .output}
 
-Note that this pattern is quite a common one with the Bash shell: we're running a program that gives us potentially a lot of output, and we're filtering out just what we're interested in.
+Note that this pattern is quite a common one with the Bash shell: we're running a program that gives us potentially a lot of output, and we're filtering out in some way just what we're interested in.
 
 > ## Simple is Good
 > 
@@ -88,7 +99,7 @@ Note that this pattern is quite a common one with the Bash shell: we're running 
 > > ## Solution
 > > 
 > > ~~~
-> > $ ./my_functions.sh | grep "0$" | head -n 2
+> > $ ./loop.sh | grep "dmel" | head -n 1
 > > ~~~
 > > {: .language-bash}
 > > 
@@ -97,5 +108,3 @@ Note that this pattern is quite a common one with the Bash shell: we're running 
 {: .solution}
 
 {: .challenge}
-
-{% include links.md %}
