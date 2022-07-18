@@ -470,7 +470,7 @@ gene_association.fb.gz
 > > ```
 > > #!/bin/bash
 > >
-> > for FILE in $(find . -max-depth 1 -type f)
+> > for FILE in $(find . -maxdepth 1 -type f)
 > > do
 > >    echo ${FILE}.processed
 > > done
