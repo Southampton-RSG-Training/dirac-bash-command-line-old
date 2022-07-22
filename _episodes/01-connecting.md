@@ -324,6 +324,8 @@ things in depth as we explore the system further.)
 
 There are several login nodes associated with the COSMA7 cluster, to which you will be allocated on in a round-robin fashion, so your prompt may your prompt may look slightly different.
 
+In order to exit the shell - and subsequently close the remote connection - you can either type `exit` followed by enter, or press <kbd>Ctrl</kbd> + <kbd>D</kbd>.
+
 ## Telling the Difference between the Local Terminal and the Remote Terminal
 
 You may have noticed that the prompt changed when you logged into the remote

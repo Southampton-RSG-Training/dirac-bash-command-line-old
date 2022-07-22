@@ -357,7 +357,9 @@ DESCRIPTION
 
 To navigate through the `man` pages, you may use the up and down arrow keys to
 move line-by-line, or try the spacebar and "b" keys to skip up and down by full
-page. Quit the `man` pages by typing "q".
+page. Depending on how your terminal and shell are configured, you may also be able
+to use a mouse or laptop trackpad to scroll through the pages. You can quit the
+`man` pages by typing "q".
 
 Alternatively, most commands you run will have a `--help` option that displays
 addition information For instance, with `ls`:
