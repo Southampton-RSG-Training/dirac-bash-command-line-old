@@ -433,7 +433,7 @@ Mandatory arguments to long options are mandatory for short options too.
 > > 7. Yes: unnecessarily complicated, but correct.
 > > 8. Yes: shortcut to go back to the user's home directory.
 > > 9. Yes: goes up one level.
-> {: .solution}
+>{: .solution}
 {: .challenge}
 
 > ## Relative Path Resolution
@@ -454,7 +454,7 @@ Mandatory arguments to long options are mandatory for short options too.
 > >    but with `..` we asked for one level further up.
 > > 3. No: see previous explanation.
 > > 4. Yes: `../backup/` refers to `/Users/backup/`.
-> {: .solution}
+>{: .solution}
 {: .challenge}
 
 > ## `ls` Reading Comprehension
@@ -479,7 +479,7 @@ Mandatory arguments to long options are mandatory for short options too.
 > >     in the current directory.
 > >  3. Yes: uses the absolute path explicitly.
 > >  4. Correct: see explanations above.
-> {: .solution}
+>{: .solution}
 {: .challenge}
 
 > ## Exploring More `ls` Arguments
@@ -497,7 +497,7 @@ Mandatory arguments to long options are mandatory for short options too.
 > > file size and the time of its last modification. The `-h` argument makes
 > > the file size "**h**uman readable", i.e. display something like `5.3K`
 > > instead of `5369`.
-> {: .solution}
+>{: .solution}
 {: .challenge}
 
 > ## Listing Recursively and By Time
@@ -513,6 +513,6 @@ Mandatory arguments to long options are mandatory for short options too.
 > >
 > > The directories are listed alphabetical at each level, the
 > > files/directories in each directory are sorted by time of last change.
-> {: .solution}
+>{: .solution}
 {: .challenge}
 

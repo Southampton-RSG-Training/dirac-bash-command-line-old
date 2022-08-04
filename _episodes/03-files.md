@@ -498,7 +498,7 @@ $ scp local-file.txt yourUsername@login7.cosma.dur.ac.uk:
 > > $ scp bash-lesson.tar.gz yourUsername@login7.cosma.dur.ac.uk:
 > > ```
 > > {: .language-bash}
-> {: .solution}
+>{: .solution}
 {: .challenge}
 
 To copy a whole directory, we add the `-r` flag, for "**r**ecursive": copy the
@@ -600,7 +600,7 @@ When it's done, check the directory size with `du` and compare.
 >
 > > ## Commands
 > >
-> > ```
+> > ``` bash
 > > $ mkdir bash-lesson
 > > $ cd bash-lesson
 > > $ tar -xvzf ../bash-lesson.tar.gz
@@ -628,14 +628,13 @@ When it's done, check the directory size with `du` and compare.
 > > x SRR307030_1.fastq
 > > x SRR307030_2.fastq
 > > ```
-> > {: .output}
 > >
 > > Note that we did not type out `-x -v -z -f`, thanks to the flag
 > > concatenation, though the command works identically either way.
 > >
 > > Whilst still in the `bash-lesson` directory:
 > >
-> > ```
+> > ``` bash
 > > $ du -sh .
 > > 123M    .
 > > ```
