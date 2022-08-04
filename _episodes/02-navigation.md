@@ -101,7 +101,6 @@ alphabetical order, arranged neatly into columns.
 > Applications Documents    Library      Music        Public
 > Desktop      Downloads    Movies       Pictures
 > ~~~
-> {: .output}
 >
 > In addition, you should also note that the preamble before the prompt (`$`)
 > is different. This is very important for making sure you know what system
