@@ -379,7 +379,7 @@ $ wget {{site.url}}{{site.baseurl}}/files/bash-lesson.tar.gz
 > >   - Debian, Ubuntu, Mint: `sudo apt install curl`
 > >   - CentOS, Red Hat: `sudo yum install curl` or `zypper install curl`
 > >   - Fedora: `sudo dnf install curl`
-> {: .solution}
+>{: .solution}
 >
 > > ## Install Aria2
 > >
@@ -393,7 +393,7 @@ $ wget {{site.url}}{{site.baseurl}}/files/bash-lesson.tar.gz
 > >  - Debian, Ubuntu, Mint: `sudo apt install aria2`
 > >  - CentOS, Red Hat: `sudo yum install aria2` or `zypper install aria2`
 > >  - Fedora: `sudo dnf install aria2`
-> {: .solution}
+>{: .solution}
 {: .callout}
 
 You'll commonly encounter `.tar.gz` archives while working in UNIX. To extract
