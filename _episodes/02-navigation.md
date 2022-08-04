@@ -76,9 +76,10 @@ $ pwd
 
 So, we know where we are. How do we look and see what's in our current 
 directory?
-```
+
+~~~
 $ ls
-```
+~~~
 {: .language-bash}
 
 `ls` prints the names of the files and directories in the current directory in
@@ -91,21 +92,21 @@ alphabetical order, arranged neatly into columns.
 > 
 > If you're on either of these machines, open a second terminal window on your local computer
 > and run the `ls` command without logging in remotely. What differences do you see?
+>
+> > ## Solution
+> >
+> > You would likely see something more like this:
+> >
+> > ~~~
+> > Applications Documents    Library      Music        Public
+> > Desktop      Downloads    Movies       Pictures
+> > ~~~
+> >
+> > In addition, you should also note that the preamble before the prompt (`$`)
+> > is different. This is very important for making sure you know what system
+> > you are issuing commands on when in the shell.
+>{: .solution}
 {: .challenge}
-
-> ## Solution
->
-> You would likely see something more like this:
->
-> ```
-> Applications Documents    Library      Music        Public
-> Desktop      Downloads    Movies       Pictures
-> ```
->
-> In addition, you should also note that the preamble before the prompt (`$`)
-> is different. This is very important for making sure you know what system
-> you are issuing commands on when in the shell.
-{: .solution}
 
 If nothing shows up when you run `ls`, it means that nothing's there. Let's
 make a directory for us to play with.
