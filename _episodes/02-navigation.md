@@ -397,7 +397,6 @@ Mandatory arguments to long options are mandatory for short options too.
 > ls: invalid option -- 'j'
 > Try 'ls --help' for more information.
 > ~~~
-> {: .error}
 {: .callout}
 
 > ## Looking at documentation
