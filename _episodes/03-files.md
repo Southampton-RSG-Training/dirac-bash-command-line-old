@@ -494,7 +494,7 @@ $ scp local-file.txt yourUsername@login7.cosma.dur.ac.uk:
 >
 > > ## Solution
 > >
-> > ```
+> > ``` bash
 > > $ scp bash-lesson.tar.gz yourUsername@login7.cosma.dur.ac.uk:
 > > ```
 > > {: .language-bash}
@@ -644,17 +644,12 @@ When it's done, check the directory size with `du` and compare.
 > > 123M    .
 > > ```
 > > {: .language-bash}
-> 
-{: .solution}
-
->
+> >
 > > ## Was the Data Compressed?
 > >
 > > Text files compress nicely: the "tarball" is one-quarter the total size of
 > > the raw data!
-> 
-{: .discussion}
-
+>{: .solution}
 {: .challenge}
 
 If you want to reverse the process -- compressing raw data instead of
