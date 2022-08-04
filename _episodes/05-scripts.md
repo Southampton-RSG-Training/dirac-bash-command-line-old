@@ -415,7 +415,7 @@ gene_association.fb.gz
 > > ## Solution
 > >
 > > Create the following script in a file called `head_all.sh`
-> > ```
+> > ``` bash
 > > #!/bin/bash
 > >
 > > for FILE in *.fastq
@@ -428,7 +428,7 @@ gene_association.fb.gz
 > >
 > > The "for" line could be modified to be `for FILE in *_1.fastq` to achieve
 > > the second aim.
-> {: .solution}
+>{: .solution}
 {: .challenge}
 
 > ## Concatenating variables
@@ -437,7 +437,7 @@ gene_association.fb.gz
 > whatever you want to concatenate to the beginning or end of the shell
 > variable after enclosing it in `{}` characters.
 >
-> ```
+> ``` bash
 > FILE=stuff.txt
 > echo ${FILE}.example
 > ```
@@ -445,7 +445,6 @@ gene_association.fb.gz
 > ```
 > stuff.txt.example
 > ```
-> {: .output}
 >
 > Can you write a script that prints off the name of every file in a directory
 > with ".processed" added to it?
@@ -453,7 +452,8 @@ gene_association.fb.gz
 > > ## Solution
 > >
 > > Create the following script in a file called `process.sh`
-> > ```
+> >
+> > ``` bash
 > > #!/bin/bash
 > >
 > > for FILE in *
@@ -467,7 +467,7 @@ gene_association.fb.gz
 > > truly only get files and not directories, we need to modify this to use the
 > > `find` command to give us only files in the current directory:
 > >
-> > ```
+> > ``` bash
 > > #!/bin/bash
 > >
 > > for FILE in $(find . -maxdepth 1 -type f)
@@ -478,7 +478,7 @@ gene_association.fb.gz
 > > {: .language-bash}
 > >
 > > but this will have the side-effect of listing hidden files too.
-> {: .solution}
+>{: .solution}
 {: .challenge}
 
 
@@ -493,7 +493,7 @@ gene_association.fb.gz
 > Let's make an example file and give everyone permission to do everything with
 > it.
 >
-> ```
+> ``` bash
 > touch example
 > ls -l example
 > chmod 777 example
@@ -507,7 +507,7 @@ gene_association.fb.gz
 >
 > > ## Solution
 > >
-> > ```
+> > ``` bash
 > > chmod 700 example
 > > ```
 > > {: .language-bash}
@@ -515,5 +515,5 @@ gene_association.fb.gz
 > > We want all permissions so: 4 (read) + 2 (write) + 1 (execute) = 7 for user
 > > (first position), no permissions, i.e. 0, for group (second position) and
 > > all (third position).
-> {: .solution}
+>{: .solution}
 {: .challenge}
