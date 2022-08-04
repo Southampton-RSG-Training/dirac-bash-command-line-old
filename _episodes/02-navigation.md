@@ -466,9 +466,6 @@ Mandatory arguments to long options are mandatory for short options too.
 > ~~~
 > pnas_sub/ pnas_final/ original/
 > ~~~
-> 
-{: .output}
-
 >
 > 1.  `ls pwd`
 > 2.  `ls -r -F`

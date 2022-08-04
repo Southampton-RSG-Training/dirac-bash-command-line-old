@@ -147,15 +147,13 @@ $ wc -l *
 >
 > > ## Solution
 > > 
-> > ```
+> > ``` bash
 > > wc -l *fb*
 > > ```
 > > {: .language-bash}
 > > 
 > > i.e. *anything or nothing* then `fb` then *anything or nothing*
-> 
-{: .solution}
-
+>{: .solution}
 {: .challenge}
 
 > ## Using other commands
@@ -165,14 +163,12 @@ $ wc -l *
 >
 > > ## Solution
 > > 
-> > ```
+> > ``` bash
 > > mkdir fastq
 > > mv *.fastq fastq/
 > > ```
 > > {: .language-bash}
-> 
-{: .solution}
-
+>{: .solution}
 {: .challenge}
 
 ## Redirecting output
@@ -356,23 +352,21 @@ the number of lines from that file.
 >
 > > ## Solution
 > > 
-> > ```
+> > ``` bash
 > > ls fastq/ | wc -l
 > > ```
 > > {: .language-bash}
 > > 
 > > Output of `ls` is one line per item, when chaining commands together like
 > > this, so counting lines gives the number of files.
-> 
-{: .solution}
-
+>{: .solution}
 {: .challenge}
 
 > ## Reading from compressed files
 >
 > Let's compress one of our files using gzip.
 >
-> ```
+> ``` bash
 > $ gzip gene_association.fb
 > ```
 > {: .language-bash}
@@ -384,13 +378,11 @@ the number of lines from that file.
 >
 > > ## Solution
 > > 
-> > ```
+> > ``` bash
 > > zcat gene_association.fb.gz | head
 > > ```
 > > {: .language-bash}
 > > 
 > > The `head` command without any options shows the first 10 lines of a file.
-> 
-{: .solution}
-
+>{: .solution}
 {: .challenge}
